@@ -1,7 +1,7 @@
 # Juan Marron.
 # The following is an unfinished encryption program. Mostly a test to get to know how to use github
 
-# Encrypts words according to Rabins Method.
+# Encrypts words according to Rabins Method. Takes words from command line as arguments in argv
 # First each letter in word gets converted to ascii.
 # Then (resulting number)^2 mod(public key) is the encryption of the word.
 # Public key for the sake of this program is: 328419349
