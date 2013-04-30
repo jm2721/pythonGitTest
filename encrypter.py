@@ -6,7 +6,7 @@
 # Then (resulting number)^2 mod(public key) is the encryption of the word.
 # Public key for the sake of this program is: 328419349
 # Note the two prime factors we will be using that multiply to give 328419349 are 45343 and 7243. Note
-# they are also congruent to 3mod4.
+# they are also congruent to 3mod4 (a necessary consideration)
 
 import sys
 
@@ -32,7 +32,7 @@ def decrypt(num):
 	z4p =  (-(num**((7244)/4)))%7243
 	# Then do Chinese Remainder theorem to get the four roots
 	# Have not gotten around to doing this yet	
-
+		
 arguments = sys.argv[1:]
 for s in arguments:
 	print "Encrypting " + "\"" + s + "\""
