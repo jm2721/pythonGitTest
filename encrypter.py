@@ -1,5 +1,7 @@
 # Juan Marron.
-# The following is an unfinished public key encryption program. Mostly a test to get to know how to use github
+# So this started as a simple encryption program and it turned into a library of modular arithmetic functions
+# when I realized the decryption method needed more functions
+# The following is an unfinished public key encryption program.
 
 # Encrypts words according to Rabins Method. Takes words from command line as arguments in argv
 # First each letter in word gets converted to ascii.
@@ -9,6 +11,7 @@
 # they are also congruent to 3mod4 (a necessary consideration)
 
 import sys
+import fractions as fr
 
 def encrypt(word):
 	word = word.lower()	
@@ -24,31 +27,10 @@ def encrypt(word):
 
 	return (coded**2)%pkey
 
-def decrypt(num):
-	# First get square roots in Z45343, and then in Z7243	
-	z1p = num**((45344)/4)%45343
-	z2p = (-(num**((45344)/4)))%45343
-	z3p =  num**((7244)/4)%7243
-	z4p =  (-(num**((7244)/4)))%7243
-	# Then do Chinese Remainder theorem to get the four roots
-	# Have not gotten around to doing this yet	
-	
-	'''x = z1p mod45343
-	x = z3p mod7243
-			
-	y = z2p mod45343
-	y = z3p mod7243
-	
-	z = z1p mod45343
-	z = z4p mod7243
-	
-	w = z2p mod45343
-	w = z4 mod7243	'''
-			
-
-
 
 arguments = sys.argv[1:]
+
 for s in arguments:
 	print "Encrypting " + "\"" + s + "\""
 	print "Encrypted: " + str(encrypt(s))
+	decrypt(encrypt(s))	
