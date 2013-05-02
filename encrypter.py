@@ -1,5 +1,5 @@
 # Juan Marron.
-# The following is an unfinished encryption program. Mostly a test to get to know how to use github
+# The following is an unfinished public key encryption program. Mostly a test to get to know how to use github
 
 # Encrypts words according to Rabins Method. Takes words from command line as arguments in argv
 # First each letter in word gets converted to ascii.
@@ -32,7 +32,22 @@ def decrypt(num):
 	z4p =  (-(num**((7244)/4)))%7243
 	# Then do Chinese Remainder theorem to get the four roots
 	# Have not gotten around to doing this yet	
-		
+	
+	'''x = z1p mod45343
+	x = z3p mod7243
+			
+	y = z2p mod45343
+	y = z3p mod7243
+	
+	z = z1p mod45343
+	z = z4p mod7243
+	
+	w = z2p mod45343
+	w = z4 mod7243	'''
+			
+
+
+
 arguments = sys.argv[1:]
 for s in arguments:
 	print "Encrypting " + "\"" + s + "\""
