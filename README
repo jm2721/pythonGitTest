@@ -1,2 +1,3 @@
-Testing out github with some Python code.
-blablabla
+An encrypter that takes a one or many words and encrypts them according to Rabin's Method.
+Then the decrypter decrypts the code back into the words (this is not quite finished yet, but almost)
+Also includes some random helper functions for modular arithmetic.
