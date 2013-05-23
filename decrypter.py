@@ -31,11 +31,9 @@ def systemSolver(coeff1, mod1, coeff2, mod2):
 	k = (newCoeff * inv) % mod2
 	return (coeff1 + mod1*k)
 
-def findCorrectRoot(r1, r2, r3, r4):	
-	v = [r1, r2, r3, r4]
-	for s in v:
-		if(len(s) == 7):
-			return r1
+#def findCorrectRoot(r1, r2, r3, r4):	
+	#This proved very difficult. Probably will not get to this.
+	#Involves a ton of loops, to figure out which numbers represent letters and which do not.
 
 
 def decrypt(num):
@@ -46,15 +44,19 @@ def decrypt(num):
 	z4p =  (-(num**((7244)/4)))%7243
 	
 	# Get the four square roots			
-	r1 = str(systemSolver(z1p, 45343, z3p, 7243))
-	r2 = str(systemSolver(z2p, 45343, z3p, 7243))
-	r3 = str(systemSolver(z1p, 45343, z4p, 7243))
-	r4 = str(systemSolver(z2p, 45343, z4p, 7243))
-	return findCorrectRoot(r1, r2, r3, r4)
+	r1 = systemSolver(z1p, 45343, z3p, 7243)
+	r2 = systemSolver(z2p, 45343, z3p, 7243)
+	r3 = systemSolver(z1p, 45343, z4p, 7243)
+	r4 = systemSolver(z2p, 45343, z4p, 7243)
+	#Print, and then the user figures out which one is a word. 
+	print "Root 1: " + str(r1)
+	print "Root 2: " + str(r2)
+	print "Root 3: " + str(r3)
+	print "Root 4: " + str(r4)
+	#return findCorrectRoot(r1, r2, r3, r4)
 
 arguments = sys.argv[1:]
 
 for i in arguments:
 	print "Decrypting: " + str(i)
-	print "Decrypted: " + str(decrypt(int(i)))
-	
+	decrypt(int(str(i)))

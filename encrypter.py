@@ -33,4 +33,3 @@ arguments = sys.argv[1:]
 for s in arguments:
 	print "Encrypting " + "\"" + s + "\""
 	print "Encrypted: " + str(encrypt(s))
-	decrypt(encrypt(s))	

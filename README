@@ -1,3 +1,8 @@
+Juan Marron
 An encrypter that takes a one or many words and encrypts them according to Rabin's Method.
-Then the decrypter decrypts the code back into the words (this is not quite finished yet, but almost)
+Then the decrypter decrypts the code and returns the four square roots. The user can then see
+which square root is the alphabet code (a = 01, b = 02, etc) of a word (there is always only one), 
+and then easily decipher it to see what the word was.
+I tried to have the code decide which was the correct square root, but it proved to be very difficult
+to do so. It involves a lot of loops, and many different checks.
 Also includes some random helper functions for modular arithmetic.
